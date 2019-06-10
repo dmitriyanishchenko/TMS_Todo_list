@@ -52,3 +52,25 @@ def remove_task(request, task_id):
     for new_id, task in enumerate(Task.objects.all(), start=1):
         task.update_id(new_id)
     return redirect('home')
+
+
+def task_down(request, task_id):
+    if not task_id == Task.objects.last().id:
+        task_we_want_to_lower_down = get_object_or_404(Task, id=task_id)
+        task_lift_up = Task.objects.get(id=task_id + 1)
+        task_lift_up.id, task_we_want_to_lower_down.id = task_we_want_to_lower_down.id, task_lift_up.id
+        task_we_want_to_lower_down.save()
+        task_lift_up.save()
+        return redirect('home')
+    return redirect('home')
+
+
+def task_up(request, task_id):
+    if not task_id == Task.objects.first().id:
+        task_we_want_to_rise = get_object_or_404(Task, id=task_id)
+        task_lower_down = Task.objects.get(id=task_id - 1)
+        task_we_want_to_rise.id, task_lower_down.id = task_lower_down.id, task_we_want_to_rise.id
+        task_we_want_to_rise.save()
+        task_lower_down.save()
+        return redirect('home')
+    return redirect('home')

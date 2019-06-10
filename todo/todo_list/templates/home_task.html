@@ -10,22 +10,24 @@
 <table align="center" class="table table-hover" border="1" bgcolor="#7fffd4">
     <tr>
         <th>Content</th>
-        <th>Complete</th>
+{#        <th>Complete</th>#}
         <th>Priority</th>
         <th>Actions</th>
     </tr>
     {% for task in task %}
     <tr>
         <td>{{ task.content }}</td>
-        <td>{{ task.complete }}</td>
+{#        <td>{{ task.complete }}</td>#}
         <td>{{ task.priority }}</td>
         <td>
-            <a href="{% url 'edit_task' task.id %}"> Edit </a>
-            <a href="{% url 'remove_task' task.id %}"> Remove </a>
+            <a href="{% url 'edit_task' task.id %}">  Edit  </a>
+            <a href="{% url 'remove_task' task.id %}">  Remove  </a>
+            <a href="{% url 'task_up' task.id %}">  Up   </a>
+            <a href="{% url 'task_down' task.id %}">  Down  </a>
+        </td>
+        <td>
 
         </td>
-
-
     </tr>
 
 
