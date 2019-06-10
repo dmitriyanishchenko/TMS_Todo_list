@@ -5,6 +5,8 @@
 
 <h2 align="center"> TO DO LIST </h2>
 
+<p align="center"><a href="{% url 'create_task' %}">Add new task</a></p>
+
 <table align="center" class="table table-hover" border="1" bgcolor="#7fffd4">
     <tr>
         <th>Content</th>
@@ -14,10 +16,14 @@
     </tr>
     {% for task in task %}
     <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>{{ task.content }}</td>
+        <td>{{ task.complete }}</td>
+        <td>{{ task.priority }}</td>
+        <td>
+            <a href=" "> Edit </a>
+            <a href=" "> Remove </a>
+
+        </td>
 
 
     </tr>
