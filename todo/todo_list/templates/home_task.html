@@ -1,36 +1,29 @@
-<h1>AAAAAAAAAAAAAAAAAAAAA</h1>
-<!--{% extends 'base.html' %}-->
+{% extends 'base.html' %}
 
-<!--{% block title %}home{% endblock %}-->
+{% block title %}TODO{% endblock %}
+{% block content %}
 
-<!--{% block content %}-->
-<!--    <p align="center">TODO LIST</p>-->
-<!--&lt;!&ndash;    <p align="center"><a href="{% url 'create_task' %}">Add new task</a></p>&ndash;&gt;-->
-<!--    <table align="center" class="table table-hover" border="1" bgcolor="#7fffd4">-->
-<!--        <tr>-->
-<!--            <th>Content</th>-->
-<!--            <th>Priority</th>-->
-<!--&lt;!&ndash;            <th>Color</th>&ndash;&gt;-->
-<!--&lt;!&ndash;            <th>Weight</th>&ndash;&gt;-->
-<!--&lt;!&ndash;            <th>Car owner's full name</th>&ndash;&gt;-->
-<!--&lt;!&ndash;            <th>Year of issue</th>&ndash;&gt;-->
-<!--&lt;!&ndash;            <th>Actions</th>&ndash;&gt;-->
-<!--        </tr>-->
-<!--        {% for task in tasks %}-->
-<!--            <tr>-->
-<!--                <td>{{ task.content }}</td>-->
-<!--                <td>{{ task.priority }}</td>-->
-<!--&lt;!&ndash;                <td>{{ car.color }}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                <td>{{ car.weight }}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                <td>{{ car.fullname }}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                <td>{{ car.year }}</td>&ndash;&gt;-->
-<!--&lt;!&ndash;                <td>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <a href="{% url 'edit_task' car.id %}">Edit</a>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <a href="{% url 'remove_task' car.id %}">Remove</a>&ndash;&gt;-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--        {% endfor %}-->
-<!--    </table>-->
+<h2 align="center"> TO DO LIST </h2>
+
+<table align="center" class="table table-hover" border="1" bgcolor="#7fffd4">
+    <tr>
+        <th>Content</th>
+        <th>Complete</th>
+        <th>Priority</th>
+        <th>Actions</th>
+    </tr>
+    {% for task in task %}
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
 
 
-<!--{% endblock %}-->
+    </tr>
+
+
+    {% endfor %}
+</table>
+
+{% endblock %}
