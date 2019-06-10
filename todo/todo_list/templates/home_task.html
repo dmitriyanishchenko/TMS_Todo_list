@@ -20,8 +20,8 @@
         <td>{{ task.complete }}</td>
         <td>{{ task.priority }}</td>
         <td>
-            <a href=" "> Edit </a>
-            <a href=" "> Remove </a>
+            <a href="{% url 'edit_task' task.id %}"> Edit </a>
+            <a href="{% url 'remove_task' task.id %}"> Remove </a>
 
         </td>
 
