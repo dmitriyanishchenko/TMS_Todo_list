@@ -3,11 +3,11 @@
 {% block title %}EDIT{% endblock %}
 
 {% block content %}
-<div align="center">
-<form  method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <br><input type="submit"  value="Accept">
-</form>
-</div>
+    <div align="center">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br><input type="submit" value="Accept">
+        </form>
+    </div>
 {% endblock %}

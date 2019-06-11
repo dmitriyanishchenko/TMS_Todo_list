@@ -4,15 +4,15 @@
     Create
 {% endblock %}
 
-{% block content%}
-<h2 align="center">New task</h2>
-<div align="center">
-<form action="" method="post">
-    {% csrf_token %}
+{% block content %}
+    <h2 align="center">New task</h2>
+    <div align="center">
+        <form action="" method="post">
+            {% csrf_token %}
 
-    {{ form.as_ul }}
+            {{ form.as_ul }}
 
-    <input type="submit" class="btn btn-light" value="Create Task">
-</form>
-</div>
+            <input type="submit" class="btn btn-light" value="Create Task">
+        </form>
+    </div>
 {% endblock %}

@@ -3,35 +3,49 @@
 {% block title %}TODO{% endblock %}
 {% block content %}
 
-<h2 align="center"> TO DO LIST </h2>
+    <h2 align="center"> TO DO LIST </h2>
 
-<p align="center"><a href="{% url 'create_task' %}">Add new task</a></p>
+    <p align="center"><a href="{% url 'create_task' %}">Add new task</a></p>
 
-<table align="center" class="table table-hover" border="1" bgcolor="#7fffd4">
-    <tr>
-        <th>Content</th>
-{#        <th>Complete</th>#}
-        <th>Priority</th>
-        <th>Actions</th>
-    </tr>
-    {% for task in task %}
-    <tr>
-        <td>{{ task.content }}</td>
-{#        <td>{{ task.complete }}</td>#}
-        <td>{{ task.priority }}</td>
-        <td>
-            <a href="{% url 'edit_task' task.id %}">  Edit  </a>
-            <a href="{% url 'remove_task' task.id %}">  Remove  </a>
-            <a href="{% url 'task_up' task.id %}">  Up   </a>
-            <a href="{% url 'task_down' task.id %}">  Down  </a>
-        </td>
-        <td>
+    <table align="center" class="table table-hover" border="1" bgcolor="#7fffd4">
+        <tr>
+            <th>Complete</th>
+            <th>Content</th>
+            <th>Priority</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in task %}
+            <tr>
+                {% if task.completed %}
 
-        </td>
-    </tr>
+                    <td style="color: green;" align="center">
+                        <a href="{% url 'mark_completed' task.id %}">
+                            <button class="button button-outline" style="color: green">* Completed! *</button>
+                        </a>
+                    </td>
+
+                {% else %}
+
+                    <td>
+                        <a href="{% url 'mark_completed' task.id %}">
+                            <button class="button button-clear">Not completed</button>
+                        </a></td>
+
+                {% endif %}
+
+                <td>{{ task.content }}</td>
+                <td>{{ task.priority }}</td>
+                <td>
+                    <a href="{% url 'edit_task' task.id %}"> Edit </a>
+                    <a href="{% url 'remove_task' task.id %}"> Remove </a>
+                    <a href="{% url 'task_up' task.id %}"> Up </a>
+                    <a href="{% url 'task_down' task.id %}"> Down </a>
+                </td>
+
+            </tr>
 
 
-    {% endfor %}
-</table>
+        {% endfor %}
+    </table>
 
 {% endblock %}

@@ -76,8 +76,8 @@ def task_up(request, task_id):
     return redirect('home')
 
 
-def mark_done(request, task_id):
-    task_we_done = get_object_or_404(Task, id=task_id)
-    task_we_done.is_done = True if not task_we_done.is_done else False
-    task_we_done.save()
+def mark_completed(request, task_id):
+    task_we_completed = get_object_or_404(Task, id=task_id)
+    task_we_completed.completed = True if not task_we_completed.completed else False
+    task_we_completed.save()
     return redirect('home')
