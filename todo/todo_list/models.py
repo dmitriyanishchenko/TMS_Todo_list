@@ -10,5 +10,5 @@ class Task(models.Model):
         Task.objects.filter(id=self.id).update(id=value)
 
     def __str__(self):
-        return f' {self.content} '
+        return f'{self.content}'
 

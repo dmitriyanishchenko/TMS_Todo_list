@@ -26,10 +26,11 @@
 
                 {% else %}
 
-                    <td>
+                    <td style="color: red;" align="center"><
                         <a href="{% url 'mark_completed' task.id %}">
                             <button class="button button-clear">Not completed</button>
-                        </a></td>
+                        </a>
+                    </td>
 
                 {% endif %}
 

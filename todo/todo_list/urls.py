@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import (
+from todo_list.views import (
     home,
     create_task,
     edit_task,
