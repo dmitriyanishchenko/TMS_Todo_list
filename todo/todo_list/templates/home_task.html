@@ -5,9 +5,12 @@
 
     <h2 align="center"> TO DO LIST </h2>
 
-    <p align="center"><a href="{% url 'create_task' %}">Add new task</a></p>
+    <p align="center">
+        <a href="{% url 'create_task' %}">
+            <button class="button button-outline"> Add new task</button>
+        </a></p>
 
-    <table align="center" class="table table-hover" border="1" bgcolor="#7fffd4">
+    <table align="center" class="table table-hover" border="1">
         <tr>
             <th>Complete</th>
             <th>Content</th>
@@ -18,7 +21,7 @@
             <tr>
                 {% if task.completed %}
 
-                    <td style="color: green;" align="center">
+                    <td align="center">
                         <a href="{% url 'mark_completed' task.id %}">
                             <button class="button button-outline" style="color: green">* Completed! *</button>
                         </a>
@@ -26,9 +29,9 @@
 
                 {% else %}
 
-                    <td style="color: red;" align="center"><
+                    <td align="center">
                         <a href="{% url 'mark_completed' task.id %}">
-                            <button class="button button-clear">Not completed</button>
+                            <button class="button button-clear" style="color: red">Not completed</button>
                         </a>
                     </td>
 
@@ -37,10 +40,18 @@
                 <td>{{ task.content }}</td>
                 <td>{{ task.priority }}</td>
                 <td>
-                    <a href="{% url 'edit_task' task.id %}"> Edit </a>
-                    <a href="{% url 'remove_task' task.id %}"> Remove </a>
-                    <a href="{% url 'task_up' task.id %}"> Up </a>
-                    <a href="{% url 'task_down' task.id %}"> Down </a>
+                    <a href="{% url 'edit_task' task.id %}">
+                        <button class="button button-outline"> Edit</button>
+                    </a>
+                    <a href="{% url 'remove_task' task.id %}">
+                        <button class="button button-outline"> Remove</button>
+                    </a>
+                    <a href="{% url 'task_up' task.id %}">
+                        <button class="button button-outline"> Up</button>
+                    </a>
+                    <a href="{% url 'task_down' task.id %}">
+                        <button class="button button-outline"> Down</button>
+                    </a>
                 </td>
 
             </tr>
