@@ -11,3 +11,4 @@ def task_up(request, task_id):
         task_lower_down.save()
         return redirect('home')
     return redirect('home')
+
