@@ -3,7 +3,7 @@ bpython==0.18
 certifi==2019.3.9
 chardet==3.0.4
 curtsies==0.3.0
-Django==2.2.2
+Django==2.2.10
 django-extensions==2.1.7
 django-request==1.5.4
 greenlet==0.4.15
